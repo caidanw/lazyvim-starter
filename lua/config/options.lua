@@ -10,3 +10,6 @@ vim.opt.scrolloff = 7 -- Minimal number of screen lines to keep above and below 
 -- Sets how neovim will display certain whitespace in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+-- LSP Server to use for Python.
+vim.g.lazyvim_python_lsp = "basedpyright"
