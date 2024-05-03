@@ -7,6 +7,8 @@ vim.opt.relativenumber = true -- Enable relative line numbers, for help with jum
 vim.opt.cursorline = true -- Show which line your cursor is on
 vim.opt.scrolloff = 7 -- Minimal number of screen lines to keep above and below the cursor.
 
+vim.opt.conceallevel = 0 -- Set conceal level to 0
+
 -- Sets how neovim will display certain whitespace in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
