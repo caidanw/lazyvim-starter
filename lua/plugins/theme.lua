@@ -18,6 +18,10 @@ return {
       transparent_background = false,
     },
   },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+  },
   -- Configure LazyVim to load the selected theme
   {
     "LazyVim/LazyVim",
