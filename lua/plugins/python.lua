@@ -6,7 +6,7 @@ return {
         pyright = {
           enabled = true,
         },
-        ruff = {
+        ruff_lsp = {
           enabled = true,
         },
       },
