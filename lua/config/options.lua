@@ -12,7 +12,3 @@ vim.opt.conceallevel = 0 -- Set conceal level to 0
 -- Sets how neovim will display certain whitespace in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
--- LSP Server to use for Python.
-vim.g.lazyvim_python_lsp = "pyright"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
