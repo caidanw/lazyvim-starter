@@ -1,13 +1,14 @@
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    priority = 1000,
     opts = {
       style = "moon",
     },
   },
   {
     "catppuccin/nvim",
+    lazy = true,
     name = "catppuccin",
     opts = {
       flavour = "auto",
