@@ -60,6 +60,7 @@ return {
       },
       setup = {
         [ruff] = function()
+          --- @param client vim.lsp.Client
           LazyVim.lsp.on_attach(function(client, _)
             if client.name == ruff then
               -- Disable hover in favor of Pyright
