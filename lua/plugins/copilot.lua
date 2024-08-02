@@ -20,12 +20,8 @@ return {
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
     },
     opts = {
-      mappings = {
-        submit_prompt = {
-          normal = "<CR>",
-          insert = "<M-CR>",
-        },
-      },
+      model = "gpt-4o",
+      auto_insert_mode = false,
     },
   },
 }
