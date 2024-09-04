@@ -1,3 +1,8 @@
+-- Return an empty table if the plugin should not be loaded
+if true then
+  return {}
+end
+
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -18,5 +23,5 @@ return {
         desc = "Explorer NeoTree (cwd)",
       },
     },
-  }
+  },
 }
