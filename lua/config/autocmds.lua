@@ -9,5 +9,10 @@ vim.filetype.add({
     jinja = "jinja",
     jinja2 = "jinja",
     j2 = "jinja",
+    env = "dotenv",
+  },
+  pattern = {
+    -- INFO: Match filenames like - ".env.example", ".env.local" and so on
+    ["%.env%.[%w_.-]+"] = "dotenv",
   },
 })
