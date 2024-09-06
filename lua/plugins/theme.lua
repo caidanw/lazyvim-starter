@@ -23,6 +23,12 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = true,
   },
+  {
+    "AlexvZyl/nordic.nvim",
+    config = function()
+      require("nordic").load()
+    end,
+  },
   -- Configure LazyVim to load the selected theme
   {
     "LazyVim/LazyVim",
