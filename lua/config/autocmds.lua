@@ -12,6 +12,9 @@ local function ft_jinja(path, bufnr, filename)
   if not ft then
     return "jinja"
   end
+  if ft == "yaml" then
+    return "jinja.yaml"
+  end
   return ft .. ".jinja"
 end
 
