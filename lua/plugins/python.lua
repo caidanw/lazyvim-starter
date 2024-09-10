@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 local lsp = "pyright"
 local ruff = "ruff"
 
@@ -34,13 +38,19 @@ return {
             },
             pyright = {
               disableLanguageServices = false,
-              disableOrganizeImports = true,
+              disableOrganizeImports = true, -- Using Ruff
               disableTaggedHints = false,
             },
           },
         },
         [ruff] = {
           enabled = true,
+          cmd_env = { RUFF_TRACE = "messages" },
+          init_options = {
+            settings = {
+              logLevel = "error",
+            },
+          },
           keys = {
             {
               "<leader>co",
