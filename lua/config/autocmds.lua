@@ -23,8 +23,6 @@ vim.filetype.add({
     ["nginx.conf"] = "nginx",
   },
   pattern = {
-    -- INFO: Match filenames like - ".env.example", ".env.local" and so on
-    ["%.env%.[%w_.-]+"] = "dotenv",
     ["(.*)%.jinja"] = ft_jinja,
     ["(.*)%.jinja2"] = ft_jinja,
     ["(.*)%.j2"] = ft_jinja,
@@ -35,4 +33,16 @@ vim.filetype.add({
     -- j2 = "jinja",
     -- env = "dotenv",
   },
+})
+
+-- Create an autocommand group for disabling LSP diagnostics for .env files
+vim.api.nvim_create_augroup("DisableLspDiagnosticsForEnv", { clear = true })
+
+-- Create an autocommand to disable LSP diagnostics for .env and *.env.* files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = "DisableLspDiagnosticsForEnv",
+  pattern = { ".env", ".env.*" },
+  callback = function(args)
+    vim.diagnostic.enable(false, { bufnr = args.buf })
+  end,
 })
