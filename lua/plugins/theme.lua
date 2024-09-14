@@ -32,6 +32,10 @@ return {
     name = "srcery",
     lazy = true,
   },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+  },
   -- Configure LazyVim to load the selected theme
   {
     "LazyVim/LazyVim",
