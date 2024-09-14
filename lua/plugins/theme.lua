@@ -1,7 +1,7 @@
 return {
   {
     "folke/tokyonight.nvim",
-    priority = 1000,
+    lazy = true,
     opts = {
       style = "moon",
     },
@@ -25,19 +25,18 @@ return {
   },
   {
     "AlexvZyl/nordic.nvim",
-    config = function()
-      require("nordic").load()
-    end,
+    priority = 1000,
   },
   {
     "srcery-colors/srcery-vim",
     name = "srcery",
+    lazy = true,
   },
   -- Configure LazyVim to load the selected theme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "nordic",
     },
   },
 }
