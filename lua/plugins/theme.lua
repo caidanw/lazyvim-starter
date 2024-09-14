@@ -29,6 +29,10 @@ return {
       require("nordic").load()
     end,
   },
+  {
+    "srcery-colors/srcery-vim",
+    name = "srcery",
+  },
   -- Configure LazyVim to load the selected theme
   {
     "LazyVim/LazyVim",
