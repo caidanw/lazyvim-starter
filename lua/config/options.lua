@@ -12,3 +12,5 @@ vim.opt.conceallevel = 0 -- Set conceal level to 0
 -- Sets how neovim will display certain whitespace in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+vim.opt.pumblend = 0 -- Disable popup menu transparency
