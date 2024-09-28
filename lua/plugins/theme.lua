@@ -25,28 +25,18 @@ return {
   },
   {
     "AlexvZyl/nordic.nvim",
-    lazy = true,
     priority = 1000,
-    opts = function()
-      local C = require("nordic.colors")
-      local U = require("nordic.utils")
-
-      return {
-        override = {
-          PmenuSel = { bg = U.blend(C.gray2, C.black0, 0.8) },
-        },
-        bold_keywords = false,
-        transparent_background = false,
-        bright_border = false,
-        cursorline = {
-          theme = "light",
-          blend = 1.5,
-        },
-        telescope = {
-          style = "classic",
-        },
-      }
-    end,
+    opts = {
+      bold_keywords = false,
+      bright_border = false,
+      cursorline = {
+        theme = "light",
+        -- blend = 1.5,
+      },
+      telescope = {
+        style = "classic",
+      },
+    },
   },
   {
     "srcery-colors/srcery-vim",
