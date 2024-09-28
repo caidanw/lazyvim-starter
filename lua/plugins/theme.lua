@@ -36,6 +36,12 @@ return {
       telescope = {
         style = "classic",
       },
+      after_palette = function(palette)
+        -- Fix the border colors from being too dark
+        palette.border_fg = palette.grey5
+        palette.fg_float_border = palette.grey5
+        palette.fg_popup_border = palette.grey5
+      end,
     },
   },
   {
