@@ -27,6 +27,7 @@ vim.filetype.add({
     ["(.*)%.jinja2"] = ft_jinja,
     ["(.*)%.j2"] = ft_jinja,
     [".*/conf%.d/.*%.conf"] = "nginx",
+    [".*/conf/.*%.conf"] = "nginx",
   },
   extension = {
     -- jinja = "jinja",
