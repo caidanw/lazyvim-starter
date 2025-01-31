@@ -1,7 +1,6 @@
 -- Return an empty table if the plugin should not be loaded
-if true then
-  return {}
-end
+-- stylua: ignore
+if true then return {} end
 
 return {
   {

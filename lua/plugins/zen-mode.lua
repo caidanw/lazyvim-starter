@@ -1,3 +1,7 @@
+-- Return an empty table if the plugin should not be loaded
+-- stylua: ignore
+if true then return {} end
+
 -- Calculate min width of the window should be 70% of the editor width or 120 columns
 -- whichever is smaller
 local function zen_mode_width()
