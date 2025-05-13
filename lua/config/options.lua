@@ -6,6 +6,7 @@ vim.opt.number = true -- Show line numbers by default
 vim.opt.relativenumber = true -- Enable relative line numbers, for help with jumping.
 vim.opt.cursorline = true -- Show which line your cursor is on
 vim.opt.scrolloff = 7 -- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.wrap = true -- Disable line wrap
 
 vim.opt.expandtab = false -- Use tabs instead of spaces
 vim.opt.shiftwidth = 4 -- Size of an indent
