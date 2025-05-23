@@ -1,3 +1,7 @@
+-- Return an empty table if the plugin should not be loaded
+-- stylua: ignore
+if true then return {} end
+
 vim.g.tmux_navigator_disable_when_zoomed = 1
 
 return {

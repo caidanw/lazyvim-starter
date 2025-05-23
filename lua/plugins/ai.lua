@@ -1,3 +1,7 @@
+-- Return an empty table if the plugin should not be loaded
+-- stylua: ignore
+if true then return {} end
+
 return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
