@@ -1,5 +1,28 @@
 if true then
-  return {}
+  return {
+    {
+      "linux-cultist/venv-selector.nvim",
+      cmd = "VenvSelect",
+      branch = "regexp",
+      opts = function(_, opts)
+        if LazyVim.has("nvim-dap-python") then
+          opts.dap_enabled = true
+        end
+        return vim.tbl_deep_extend("force", opts, {
+          name = {
+            "venv",
+            ".venv",
+            "env",
+            ".env",
+            ".direnv",
+          },
+        })
+      end,
+      keys = {
+        { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" },
+      },
+    },
+  }
 end
 
 local lsp = "pyright"
@@ -124,28 +147,6 @@ return {
         local path = require("mason-registry").get_package("debugpy"):get_install_path()
         require("dap-python").setup(path .. "/venv/bin/python")
       end,
-    },
-  },
-  {
-    "linux-cultist/venv-selector.nvim",
-    cmd = "VenvSelect",
-    branch = "regexp",
-    opts = function(_, opts)
-      if LazyVim.has("nvim-dap-python") then
-        opts.dap_enabled = true
-      end
-      return vim.tbl_deep_extend("force", opts, {
-        name = {
-          "venv",
-          ".venv",
-          "env",
-          ".env",
-          ".direnv",
-        },
-      })
-    end,
-    keys = {
-      { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" },
     },
   },
   {
