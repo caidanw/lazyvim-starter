@@ -1,30 +1,3 @@
-if true then
-  return {
-    {
-      "linux-cultist/venv-selector.nvim",
-      cmd = "VenvSelect",
-      branch = "regexp",
-      opts = function(_, opts)
-        if LazyVim.has("nvim-dap-python") then
-          opts.dap_enabled = true
-        end
-        return vim.tbl_deep_extend("force", opts, {
-          name = {
-            "venv",
-            ".venv",
-            "env",
-            ".env",
-            ".direnv",
-          },
-        })
-      end,
-      keys = {
-        { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" },
-      },
-    },
-  }
-end
-
 local lsp = "pyright"
 local ruff = "ruff"
 
@@ -102,6 +75,36 @@ return {
           end)
         end,
       },
+    },
+  },
+  {
+    "linux-cultist/venv-selector.nvim",
+    cmd = "VenvSelect",
+    branch = "regexp",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      -- "mfussenegger/nvim-dap", "mfussenegger/nvim-dap-python", --optional
+      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+    },
+    opts = function(_, opts)
+      if LazyVim.has("nvim-dap-python") then
+        opts.dap_enabled = true
+      end
+
+      opts.search_timeout = 30
+
+      return vim.tbl_deep_extend("force", opts, {
+        name = {
+          "venv",
+          ".venv",
+          "env",
+          ".env",
+          ".direnv",
+        },
+      })
+    end,
+    keys = {
+      { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" },
     },
   },
   {
